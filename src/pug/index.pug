@@ -1,0 +1,44 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+
+        link(rel="stylesheet" type="text/css" href="css/index.css")
+        link(rel="stylesheet" type="text/css" href="css/anekdot.css")
+
+        include components/head.pug
+
+#pageWrapper.page-wrapper
+    include components/header.pug
+
+    body
+        .container
+            h1.text-center.pt-3.pb-3 Hello, All!
+            section
+                h5.text-center Данный .
+                br
+
+            section
+
+                    hr
+
+            section
+                //- <div class="row">
+                //- <div class="col-xs-6 col-md-3">
+                            p Длинная дорога юнный падаван, ждет тебя. Но это того стоит
+                            a.btn.btn-default(href='requestHelpdesk.html' role='button') Требования
+                            p
+                                | Собственно говоря, по большей части, именно для тебя тут все и
+                                | написано..
+                            p
+                                a.btn.btn-default(href='requestAdmin.html' role='button') Требования
+
+        //- <!-- переход на страницу тестов    -->
+        //- |
+        //- a(href="testAdmin.html") ТЕСТЫ
+
+    include components/footer.pug
+
+    script(src="js/index.js")
