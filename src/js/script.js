@@ -1,71 +1,4 @@
-// "use strict";
-
 // document.querySelector("#alerted").onclick = function() {
-
-document.addEventListener('DOMContentLoaded', () => {
- 
-	// Кнопка по которой происходит клик
-	let callBackButton = document.getElementById('callback-button');
-	
-	// Модальное окно, которое необходимо открыть
-	let modal1 = document.getElementById('modal-1');
-	
-	// Кнопка "закрыть" внутри модального окна
-	let closeButton = modal1.getElementsByClassName('modal__close-button')[0];
-	
-	// Тег body для запрета прокрутки
-	let tagBody = document.getElementsByTagName('body');
-	
-	callBackButton.onclick = function (e) {
-		e.preventDefault();
-		modal1.classList.add('modal_active');
-		tagBody.classList.add('hidden');
-	};
-	
-	closeButton.onclick = function (e) {
-		e.preventDefault();
-		modal1.classList.remove('modal_active');
-		tagBody.classList.remove('hidden');
-	};
-	
-	modal1.onmousedown = function (e) {
-		let target = e.target;
-		let modalContent = modal1.getElementsByClassName('modal__content')[0];
-		if (e.target.closest('.' + modalContent.className) === null) {
-		this.classList.remove('modal_active');
-		tagBody.classList.remove('hidden');
-		}
-	};
-	
-	// Вызов модального окна несколькими кнопками на странице
-	let buttonOpenModal1 = document.getElementsByClassName('get-modal_1');
-	
-	for (let button of buttonOpenModal1) {
-		button.onclick = function (e) {
-		e.preventDefault();
-		modal1.classList.add('modal_active');
-		tagBody.classList.add('hidden');
-		};
-	}
-	   
-});
-
-
-// 	function alerted(){
-// 		var checkbox = document.getElementById('scalesMusic');
-// 		if (checkbox.checked != false){
-// 			var audio = new Audio(); // Создаём новый элемент Audio
-// 				audio.src = 'mp3/bells.mp3';
-// 				// audio.src = 'mp3/MindPrep.mp3'; 
-// 				audio.autoplay = true; 
-// 				audio.loop = true; 
-// 				// audio.volume = 100; //.volume="0"
-// 		} 
-// 	}
-
-// }
-
-
 
 let fontArr = [
 	'Helvetica',
@@ -135,32 +68,32 @@ let music = document.getElementById('music');
 let ticker = '';
 let i = 0;
 let lenArr = arr.length;
-let bgImg = 'url(img/img0.jpg)';
+let bgImg = 'url(./img/img0.jpg)';
 let bgCol = 'red';//'url(img/img0One.jpg)';
 let inputFontSize = 98 ;
 let inputFontName = fontArr[0];
 let audio = new Audio(); // Создаём новый элемент Audio
 
 const bodyPage = document.querySelector('body');
+const htmlPage = document.querySelector('html');
 const radioBtn = document.querySelectorAll('.radio');
 bodyPage.style.backgroundColor =  '#E080';
 
 radioBtn.forEach(item => {
 	item.addEventListener ('click', () => {
-		bgImg = `url(img/${item.value}.jpg)`; 
-		bgCol = `url(img/${item.value}One.jpg)`;
-		// bodyPage.style.cssText = 'body:after { content: ""; position: fixed; top: 0; bottom: 0; left: 0; right: 0; background: rgba(255, 255, 255, 0.1); pointer-events: none; }';
+		bgImg = `url(./img/${item.value}.jpg)`; 
+		bgCol = `url(./img/${item.value}One.jpg)`;
+		// bodyPage.style.cssText = 'body:after { content: ""; position: fixed; top: 0; bottom: 0; left: 0; right: 0; 
+			//background: rgba(255, 255, 255, 0.1); pointer-events: none; }';
 		// document.body.style.backgroundImage = "url('img_tree.png')";
 			// bodyPage.style.backgroundColor = 'red';
 	}) ;
 }) ;
 
-// let inputFontSize = document.querySelector('#tentacles') ; //not work
 const fontSize = document.getElementById('tentacles');
 	fontSize.addEventListener ('click', () => {
 	inputFontSize = fontSize.valueAsNumber;
 }) ;
-
 
 const fontName = document.getElementById('Font');
 for (let i = 1; i < fontArr.length; i++) {
@@ -169,17 +102,52 @@ for (let i = 1; i < fontArr.length; i++) {
 }
 
 fontName.addEventListener ('click', () => {
-	// console.dir(fontName);
 	inputFontName = fontName.value;
-	// console.log(inputFontName); 
 }) ;
 
 
 
 
-
-
 function beginTraining(v) {
+	
+	setTimeout('endTraining()', 450000); //450000
+	// document.getElementsByClassName('mystyle')[0].style= "margin: 50px";
+
+	ticker = setInterval('writeText()', v);
+
+	// music.innerHTML = `<audio src="mp3/bells.mp3" autoplay="autoplay"></audio>`;	
+	let checkbox = document.getElementById('scalesMusic');
+	if (checkbox.checked != false) {
+		// listen('mp3/k1.mp3', true);
+		listen('./mp3/MindPrep.mp3', true);
+	}
+	
+	document.documentElement.requestFullscreen();
+
+	// htmlPage.style.cssText = 'display:flex; align-items:center; color:blue;';//"color:blue;";//'display:flex; align-items:center;';
+	htmlPage.setAttribute('style', 'color:blue; font-size: 200px;');
+	// console.log(htmlPage.style);
+	// display: flex;
+	// align-items: center }
+	// bodyPage.style.backgroundImage.filter  = "brightness(30%)";
+
+	bodyPage.style.backgroundImage = bgImg;  //"url('img/Grad.jpg')";
+	bodyPage.style.backgroundColor  = bgCol;
+	console.log(bgImg,"-",bgCol);
+	
+	// htmlPage.style.top = '-25%';
+	// bodyPage.style.backgroundPosition = "center";
+	
+	
+	document.addEventListener('dblclick', (event) =>{
+		event.target.remove();
+		endTraining();
+	 });
+	document.addEventListener('keypress', (event) =>{
+		event.target.remove();
+		endTraining();
+	});
+
 
 	//удаляем лишнее
 	// const delBut = document.querySelector('#del');
@@ -189,48 +157,10 @@ function beginTraining(v) {
 			item.remove();
 		});
 	// });
-	
-	setTimeout('endTraining()', 450000);//450000
-
-	// document.getElementsByClassName('mystyle')[0].style= "margin: 50px";
-
-	cont.style.top = '45%';
-	ticker = setInterval('writeText()', v);
-
-	// music.innerHTML = '<embed src="music.swf?2" FlashVars="url=mp3/MindPrep.mp3" WIDTH="1" HEIGHT="1"/>';
-	// music.innerHTML = `<audio src="mp3/bells.mp3" autoplay="autoplay"></audio>`;	
-
-	let checkbox = document.getElementById('scalesMusic');
-	if (checkbox.checked != false) {
-		// listen('mp3/k1.mp3', true);
-		listen('mp3/MindPrep.mp3', true);
-	}
-
-	
-	document.documentElement.requestFullscreen();
-	bodyPage.style.backgroundPosition = "center";
-	// document.body.style.backgroundColor = "url('img/gradOne.jpg')";
-	bodyPage.style.backgroundImage = bgImg;  //"url('img/Grad.jpg')";
-	bodyPage.style.backgroundColor  = bgCol;
-	console.log(bgImg,"-",bgCol);
-	bodyPage.style.backgroundImage.filter  = "brightness(30%)";
-	
-	// document.addEventListener('click', getEventType, false);     // 'keypress' // 'resize'
-	document.addEventListener('dblclick', (event) =>{
-		event.target.remove();
-		endTraining();
-	 });
-	document.addEventListener('keypress', (event) =>{
-		event.target.remove();
-		endTraining();
-	 });
-
-	// function removeEvent (event) =>{
-	// 	event.target.remove();
-	// endTraining();
 }
 
 function writeText() {
+
 	// audio.pause();
 	// audio.currentTime = 0;
  
@@ -247,6 +177,9 @@ function writeText() {
 }
 
 function createWindow(link, w, h) { //opens new window
+	// полный сброс свойств css 
+	// document.body.style.display = "none";
+
 	// const delElements = document.querySelectorAll('.remove', (event) =>{
 	// 	event.target.remove();
 	// 	console.log("2", event.target);
@@ -279,7 +212,7 @@ function endTraining() {
 	for (i = 0; i < lenArr; i++)
 		cont.innerHTML += arr[i] + '<br/>';
 
-	cont.innerHTML += '<br/><input type="button" value="Слушать Установки" onclick="listen(\'mp3/ToListen.mp3\', 3);" />';
+	cont.innerHTML += `<br/><input type="button" value="Слушать Установки" onclick="listen("./mp3/ToListen.mp3", 3);" />`;
 	// cont.innerHTML += '<br/><input type="button" value="Слушать Установки" onclick="listenAffirmation;" />';
 
 	cont.innerHTML += '<br/><input type="button" value="Главное меню" onclick="window.location.reload();" />';
@@ -296,7 +229,6 @@ function endTraining() {
 
 	document.location.href = "#ModalOpen";
 	setTimeout(function() {document.location.href = "#close";}, 2000);
-
 }
 
 function soundStart(melody, loop) {

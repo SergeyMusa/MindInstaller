@@ -37,7 +37,6 @@ const html = () => {
 
 const styles = () => {
     return gulp.src([
-        'node_modules/bootstrap/scss/bootstrap.scss',          
         'src/styles/**/*.scss'
         ])
         .pipe(sass())

@@ -1,44 +1,86 @@
 doctype html
-html(lang="en")
+html(lang="ru")
     head
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible" content="IE=edge")
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(name='description' content='MindInstaller4web - программа MindInstaller4web приблизит вас к осознанным сновидениям')
+        title MindInstaller4web: Осознанные сновидения - это просто и доступно
 
         link(rel="stylesheet" type="text/css" href="css/index.css")
-        link(rel="stylesheet" type="text/css" href="css/anekdot.css")
 
         include components/head.pug
 
 #pageWrapper.page-wrapper
-    include components/header.pug
+    //- include components/header.pug
 
     body
         .container
-            h1.text-center.pt-3.pb-3 Hello, All!
-            section
-                h5.text-center Данный .
-                br
-
-            section
-
-                    hr
-
-            section
-                //- <div class="row">
-                //- <div class="col-xs-6 col-md-3">
-                            p Длинная дорога юнный падаван, ждет тебя. Но это того стоит
-                            a.btn.btn-default(href='requestHelpdesk.html' role='button') Требования
-                            p
-                                | Собственно говоря, по большей части, именно для тебя тут все и
-                                | написано..
-                            p
-                                a.btn.btn-default(href='requestAdmin.html' role='button') Требования
-
-        //- <!-- переход на страницу тестов    -->
-        //- |
-        //- a(href="testAdmin.html") ТЕСТЫ
-
-    include components/footer.pug
-
-    script(src="js/index.js")
+        .remove
+            h1 MindInstaller4web
+            h2 Программа для стимуляции осознанных сновидений
+        #cont.wrap
+            // style="position:absolute; width:100%; text-align:center; top:25%; font-size:65px; font-family:Times New Roman;">
+            // <span style="font-size:12pt !important;"></span>
+            // style="overflow: hidden;">
+            .flexImg
+                div
+                    div
+                    img.miniImg(src='./img/img0.jpg' alt='Градиент')
+                    div
+                    input#radio0.radio(type='radio' name='scalesBackPict' value='img0' checked='')
+                    label(for='radio0') Градиент
+                div
+                    div
+                    img.miniImg(src='./img/img1.jpg' alt='Солнечный')
+                    div
+                    input#radio1.radio(type='radio' name='scalesBackPict' value='img1')
+                    label(for='radio1') Солнечный
+                div
+                    div
+                    img.miniImg(src='./img/img2.jpg' alt='нет фона')
+                    div
+                    input#radio2.radio(type='radio' name='scalesBackPict' value='img2')
+                    label(for='radio2') нет фона
+            .line
+           
+            input#flashBackPictId(type='checkbox' name='flashBackPict' checked='')
+            label(for='flashBackPictId') Вспышки
+            #music.fat
+            input#scalesMusic(type='checkbox' name='scalesMusic' checked='')
+            label(for='scalesMusic') музыка: Бинауральные ритмы
+            // <button type="submit" id="submit" onclick="alerted();">Нажми меня</button>
+            .fnt
+            label(for='Font') можно поменять шрифт:
+            select#Font
+                option(value='Helvetica' selected='') Helvetica
+                // <option value="january">January</option>
+                //
+                <option value="january">January2</option>
+                <option value="january">January3</option>
+            // <p></p>
+            label(for='tentacles')  и размер:
+            input#tentacles(type='number' name='tentacles' value='98' min='48' max='200' step='4')
+            // <hr>
+            .fat
+            input(type='button' value='Мягкий режим' onclick='beginTraining(100);')
+            input(type='button' value='Нормальный режим' onclick='beginTraining(75);')
+            input(type='button' value='Жесткий режим' onclick='beginTraining(50);')
+            input(type='button' value='Инструкция' onclick='open_window(help.txt);')
+            p
+            button#del.remove(type='button') Click Me!
+            // cсылка на модальное окно
+            // <a href="#ModalOpen" title="">___</a>
+            // само модальное окно
+            //
+                //- <div id="ModalOpen" class="Window">
+                //- <div>
+                //- <a href="#close" title="Закрыть" class="close">X</a>
+                //- <p>Cюда можно разместить любой контент</p>
+                //- <img src="./img/demo.jpg" alt="..." />
+                //- </div>
+                //- </div>
+        //- include components/footer.pug
+        //- script(async='' src='./js/script.js')
+        script(async='' src='./js/main.min.js')
+        // defer="defer"
