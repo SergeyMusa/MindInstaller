@@ -7,6 +7,7 @@
 .container {
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 
 .flexImg {
@@ -15,13 +16,19 @@
 }
 
 .wrap {
-  top: 30%;
   text-align: center;
   color: white;
 }
 
+.input {
+  background-color: rgba(74, 103, 161, 0.938);
+  /* Цвет фона */
+  color: #f5f7fc;
+  /* Цвет текста */
+}
+
 h1 {
-  font: 150 70px/1.5 "Dream", Helvetica, sans-serif;
+  font: 190 85px/1.7 "Dream", Helvetica, sans-serif;
   color: #f4f4f4;
   text-shadow: 3px 3px 0px rgba(202, 209, 226, 0.1), 7px 7px 0px rgba(0, 0, 0, 0.05);
   top: 15%;
@@ -35,10 +42,12 @@ h2 {
   /* top:16%; */
   font-weight: normal;
   text-align: center;
+  margin-bottom: 15%;
 }
 
 p, a {
   font-family: "Merriweather", sans-serif;
+  font-size: 0.8em;
 }
 
 body {

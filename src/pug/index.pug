@@ -52,15 +52,15 @@ html(lang="ru")
             // <button type="submit" id="submit" onclick="alerted();">Нажми меня</button>
             .fnt
             label(for='Font') можно поменять шрифт:
-            select#Font
+            select#Font.input
                 option(value='Helvetica' selected='') Helvetica
                 // <option value="january">January</option>
                 //
-                <option value="january">January2</option>
-                <option value="january">January3</option>
+                //- <option value="january">January2</option>
+                //- <option value="january">January3</option>
             // <p></p>
             label(for='tentacles')  и размер:
-            input#tentacles(type='number' name='tentacles' value='98' min='48' max='200' step='4')
+            input#tentacles.input(type='number' name='tentacles' value='98' min='48' max='200' step='4')
             // <hr>
             .fat
             input(type='button' value='Мягкий режим' onclick='beginTraining(100);')
