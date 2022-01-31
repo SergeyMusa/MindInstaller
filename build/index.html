@@ -15,72 +15,75 @@
 </html>
 <div class="page-wrapper" id="pageWrapper">
   <body>
-    <div class="container"></div>
-    <div class="remove">
+    <div class="container remove">
       <h1>MindInstaller4web</h1>
       <h2>Программа для стимуляции осознанных сновидений</h2>
-    </div>
-    <div class="wrap" id="cont">
-      <!-- style="position:absolute; width:100%; text-align:center; top:25%; font-size:65px; font-family:Times New Roman;">-->
-      <!-- <span style="font-size:12pt !important;"></span>-->
-      <!-- style="overflow: hidden;">-->
-      <div class="flexImg">
-        <div>
-          <div></div><img class="miniImg" src="./img/img0.jpg" alt="Градиент">
-          <div></div>
-          <input class="radio" id="radio0" type="radio" name="scalesBackPict" value="img0" checked="">
-          <label for="radio0">Градиент</label>
+      <div class="wrap">
+        <!-- style="position:absolute; width:100%; text-align:center; top:25%; font-size:65px; font-family:Times New Roman;">-->
+        <!-- <span style="font-size:12pt !important;"></span>-->
+        <!-- style="overflow: hidden;">-->
+        <div class="flexImg">
+          <div>
+            <div></div><img class="miniImg" src="./img/img0.jpg" alt="Градиент">
+            <div></div>
+            <input class="radio" id="radio0" type="radio" name="scalesBackPict" value="img0" checked="">
+            <label for="radio0">Градиент</label>
+          </div>
+          <div>
+            <div></div><img class="miniImg" src="./img/img1.jpg" alt="Солнечный">
+            <div></div>
+            <input class="radio" id="radio1" type="radio" name="scalesBackPict" value="img1">
+            <label for="radio1">Солнечный</label>
+          </div>
+          <div>
+            <div></div><img class="miniImg" src="./img/img2.jpg" alt="нет фона">
+            <div></div>
+            <input class="radio" id="radio2" type="radio" name="scalesBackPict" value="img2">
+            <label for="radio2">нет фона</label>
+          </div>
         </div>
-        <div>
-          <div></div><img class="miniImg" src="./img/img1.jpg" alt="Солнечный">
-          <div></div>
-          <input class="radio" id="radio1" type="radio" name="scalesBackPict" value="img1">
-          <label for="radio1">Солнечный</label>
-        </div>
-        <div>
-          <div></div><img class="miniImg" src="./img/img2.jpg" alt="нет фона">
-          <div></div>
-          <input class="radio" id="radio2" type="radio" name="scalesBackPict" value="img2">
-          <label for="radio2">нет фона</label>
-        </div>
+        <div class="line"></div>
+        <input id="flashBackPictId" type="checkbox" name="flashBackPict" checked="">
+        <label for="flashBackPictId">Вспышки</label>
+        <div class="fat" id="music"></div>
+        <input id="scalesMusic" type="checkbox" name="scalesMusic" checked="">
+        <label for="scalesMusic">музыка: Бинауральные ритмы</label>
+        <!-- <button type="submit" id="submit" onclick="alerted();">Нажми меня</button>-->
+        <div class="fnt"></div>
+        <label for="Font">можно поменять шрифт:</label>
+        <select class="inputFon" id="Font">
+          <option value="Helvetica" selected="">Helvetica</option>
+          <!-- <option value="january">January</option>-->
+          <!---->
+        </select>
+        <!-- <p></p>-->
+        <label for="tentacles"> и размер:</label>
+        <input class="inputFon" id="tentacles" type="number" name="tentacles" value="98" min="48" max="200" step="4">
+        <!-- <hr>-->
+        <div class="fat"></div>
+        <input class="btn first" type="button" value="Мягкий режим" onclick="beginTraining(100);">
+        <input class="btn first" type="button" value="Нормальный режим" onclick="beginTraining(75);">
+        <input class="btn first" type="button" value="Жесткий режим" onclick="beginTraining(50);">
+        <input class="btn first" type="button" value="Инструкция" onclick="open_window(help.txt);">
+        <!-- cсылка на модальное окно-->
+        <!-- <a href="#ModalOpen" title="">___</a>-->
+        <!-- само модальное окно-->
+        <!--
+        //- <div id="ModalOpen" class="Window">
+        //- <div>
+        //- <a href="#close" title="Закрыть" class="close">X</a>
+        //- <p>Cюда можно разместить любой контент</p>
+        //- <img src="./img/demo.jpg" alt="..." />
+        //- </div>
+        //- </div>
+        -->
       </div>
-      <div class="line"></div>
-      <input id="flashBackPictId" type="checkbox" name="flashBackPict" checked="">
-      <label for="flashBackPictId">Вспышки</label>
-      <div class="fat" id="music"></div>
-      <input id="scalesMusic" type="checkbox" name="scalesMusic" checked="">
-      <label for="scalesMusic">музыка: Бинауральные ритмы</label>
-      <!-- <button type="submit" id="submit" onclick="alerted();">Нажми меня</button>-->
-      <div class="fnt"></div>
-      <label for="Font">можно поменять шрифт:</label>
-      <select class="input" id="Font">
-        <option value="Helvetica" selected="">Helvetica</option>
-        <!-- <option value="january">January</option>-->
-        <!---->
-      </select>
-      <!-- <p></p>-->
-      <label for="tentacles"> и размер:</label>
-      <input class="input" id="tentacles" type="number" name="tentacles" value="98" min="48" max="200" step="4">
-      <!-- <hr>-->
-      <div class="fat"></div>
-      <input class="btn first" type="button" value="Мягкий режим" onclick="beginTraining(100);">
-      <input class="btn first" type="button" value="Нормальный режим" onclick="beginTraining(75);">
-      <input class="btn first" type="button" value="Жесткий режим" onclick="beginTraining(50);">
-      <input class="btn first" type="button" value="Инструкция" onclick="open_window(help.txt);">
-      <!-- cсылка на модальное окно-->
-      <!-- <a href="#ModalOpen" title="">___</a>-->
-      <!-- само модальное окно-->
-      <!--
-      //- <div id="ModalOpen" class="Window">
-      //- <div>
-      //- <a href="#close" title="Закрыть" class="close">X</a>
-      //- <p>Cюда можно разместить любой контент</p>
-      //- <img src="./img/demo.jpg" alt="..." />
-      //- </div>
-      //- </div>
-      -->
     </div>
-    <script async="" src="./js/main.min.js"></script>
-    <!-- defer="defer"-->
+    <div class="cont"> 
+      <p></p>
+    </div>
+    <script async="" src="./js/main.min.js">
+      <!-- defer="defer"-->
+    </script>
   </body>
 </div>

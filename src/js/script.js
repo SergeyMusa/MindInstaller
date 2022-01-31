@@ -63,7 +63,7 @@ var arr = [
 	'Я человек !!!',
 ];
 
-let cont = document.getElementById('cont');
+let cont = document.querySelector('.cont');
 let music = document.getElementById('music');
 let ticker = '';
 let i = 0;
@@ -133,6 +133,8 @@ function beginTraining(v) {
 
 	bodyPage.style.backgroundImage = bgImg;  //"url('img/Grad.jpg')";
 	bodyPage.style.backgroundColor  = bgCol;
+	// document.querySelector('.wrap').color = 'black' ;
+
 	console.log(bgImg,"-",bgCol);
 	
 	// htmlPage.style.top = '-25%';
@@ -140,11 +142,11 @@ function beginTraining(v) {
 	
 	
 	document.addEventListener('dblclick', (event) =>{
-		event.target.remove();
+		// event.target.remove();
 		endTraining();
 	 });
 	document.addEventListener('keypress', (event) =>{
-		event.target.remove();
+		// event.target.remove();
 		endTraining();
 	});
 
@@ -188,12 +190,15 @@ function createWindow(link, w, h) { //opens new window
 	var win = "width=" + w + ",height=" + h + ",menubar=no,location=no,resizable=yes,scrollbars=yes";
 	var newWin = window.open(link, "newWin", win);
 	newWin.focus();
+	document.querySelector('#cont').color = 'black' ;
+
 }
 
 
 function endTraining() {
 	ticker = clearInterval(ticker);
-	
+	bodyPage.style.backgroundColor  = "./img/img2.jpg ";
+
 	audio.pause();
 	audio.currentTime = 0;
 	

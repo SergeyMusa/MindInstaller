@@ -15,72 +15,73 @@ html(lang="ru")
     //- include components/header.pug
 
     body
-        .container
-        .remove
+        .container.remove
             h1 MindInstaller4web
             h2 Программа для стимуляции осознанных сновидений
-        #cont.wrap
-            // style="position:absolute; width:100%; text-align:center; top:25%; font-size:65px; font-family:Times New Roman;">
-            // <span style="font-size:12pt !important;"></span>
-            // style="overflow: hidden;">
-            .flexImg
-                div
+            .wrap
+                // style="position:absolute; width:100%; text-align:center; top:25%; font-size:65px; font-family:Times New Roman;">
+                // <span style="font-size:12pt !important;"></span>
+                // style="overflow: hidden;">
+                .flexImg
                     div
-                    img.miniImg(src='./img/img0.jpg' alt='Градиент')
+                        div
+                        img.miniImg(src='./img/img0.jpg' alt='Градиент')
+                        div
+                        input#radio0.radio(type='radio' name='scalesBackPict' value='img0' checked='')
+                        label(for='radio0') Градиент
                     div
-                    input#radio0.radio(type='radio' name='scalesBackPict' value='img0' checked='')
-                    label(for='radio0') Градиент
-                div
+                        div
+                        img.miniImg(src='./img/img1.jpg' alt='Солнечный')
+                        div
+                        input#radio1.radio(type='radio' name='scalesBackPict' value='img1')
+                        label(for='radio1') Солнечный
                     div
-                    img.miniImg(src='./img/img1.jpg' alt='Солнечный')
-                    div
-                    input#radio1.radio(type='radio' name='scalesBackPict' value='img1')
-                    label(for='radio1') Солнечный
-                div
-                    div
-                    img.miniImg(src='./img/img2.jpg' alt='нет фона')
-                    div
-                    input#radio2.radio(type='radio' name='scalesBackPict' value='img2')
-                    label(for='radio2') нет фона
-            .line
-           
-            input#flashBackPictId(type='checkbox' name='flashBackPict' checked='')
-            label(for='flashBackPictId') Вспышки
-            #music.fat
-            input#scalesMusic(type='checkbox' name='scalesMusic' checked='')
-            label(for='scalesMusic') музыка: Бинауральные ритмы
-            // <button type="submit" id="submit" onclick="alerted();">Нажми меня</button>
-            .fnt
-            label(for='Font') можно поменять шрифт:
-            select#Font.input
-                option(value='Helvetica' selected='') Helvetica
-                // <option value="january">January</option>
+                        div
+                        img.miniImg(src='./img/img2.jpg' alt='нет фона')
+                        div
+                        input#radio2.radio(type='radio' name='scalesBackPict' value='img2')
+                        label(for='radio2') нет фона
+                .line
+            
+                input#flashBackPictId(type='checkbox' name='flashBackPict' checked='')
+                label(for='flashBackPictId') Вспышки
+                #music.fat
+                input#scalesMusic(type='checkbox' name='scalesMusic' checked='')
+                label(for='scalesMusic') музыка: Бинауральные ритмы
+                // <button type="submit" id="submit" onclick="alerted();">Нажми меня</button>
+                .fnt
+                label(for='Font') можно поменять шрифт:
+                select#Font.inputFon
+                    option(value='Helvetica' selected='') Helvetica
+                    // <option value="january">January</option>
+                    //
+                    //- <option value="january">January2</option>
+                    //- <option value="january">January3</option>
+                // <p></p>
+                label(for='tentacles')  и размер:
+                input#tentacles.inputFon(type='number' name='tentacles' value='98' min='48' max='200' step='4')
+                // <hr>
+                .fat
+                input.btn.first(type='button' value='Мягкий режим' onclick='beginTraining(100);')
+                input.btn.first(type='button' value='Нормальный режим' onclick='beginTraining(75);')
+                input.btn.first(type='button' value='Жесткий режим' onclick='beginTraining(50);')
+                input.btn.first(type='button' value='Инструкция' onclick='open_window(help.txt);')
+                //- p
+                //- button#del.remove(type='button') Click Me!
+                // cсылка на модальное окно
+                // <a href="#ModalOpen" title="">___</a>
+                // само модальное окно
                 //
-                //- <option value="january">January2</option>
-                //- <option value="january">January3</option>
-            // <p></p>
-            label(for='tentacles')  и размер:
-            input#tentacles.input(type='number' name='tentacles' value='98' min='48' max='200' step='4')
-            // <hr>
-            .fat
-            input.btn.first(type='button' value='Мягкий режим' onclick='beginTraining(100);')
-            input.btn.first(type='button' value='Нормальный режим' onclick='beginTraining(75);')
-            input.btn.first(type='button' value='Жесткий режим' onclick='beginTraining(50);')
-            input.btn.first(type='button' value='Инструкция' onclick='open_window(help.txt);')
-            //- p
-            //- button#del.remove(type='button') Click Me!
-            // cсылка на модальное окно
-            // <a href="#ModalOpen" title="">___</a>
-            // само модальное окно
-            //
-                //- <div id="ModalOpen" class="Window">
-                //- <div>
-                //- <a href="#close" title="Закрыть" class="close">X</a>
-                //- <p>Cюда можно разместить любой контент</p>
-                //- <img src="./img/demo.jpg" alt="..." />
-                //- </div>
-                //- </div>
-        //- include components/footer.pug
-        //- script(async='' src='./js/script.js')
+                    //- <div id="ModalOpen" class="Window">
+                    //- <div>
+                    //- <a href="#close" title="Закрыть" class="close">X</a>
+                    //- <p>Cюда можно разместить любой контент</p>
+                    //- <img src="./img/demo.jpg" alt="..." />
+                    //- </div>
+                    //- </div>
+            //- include components/footer.pug
+            //- script(async='' src='./js/script.js')
+        .cont 
+            p
         script(async='' src='./js/main.min.js')
-        // defer="defer"
+            // defer="defer"
